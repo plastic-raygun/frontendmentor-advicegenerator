@@ -1,38 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+:root {
+  --dark-blue: hsl(218, 23%, 16%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --grayish-blue: hsl(217, 19%, 38%);
+  --neon-green: hsl(150, 100%, 66%);
+  --light-cyan: hsl(193, 38%, 86%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Manrope, sans-serif;
+  font-size: 28px;
+  color: var(--light-cyan);
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: hsl(218, 23%, 16%);
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  padding:50px;
+  border-radius: 20px;
+  background-color: var(--dark-grayish-blue);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.advice-title {
+  color: var(--neon-green);
+  text-transform: uppercase;
+  font-size: .5rem;
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: .15rem;
+  font-weight: 600;
+}
+
+.quote-text {
+  text-align: center;
+}
+
+.divider {
+  background-image: url('assets/pattern-divider-mobile.svg');
+  height: 16px;
+  width: 100%;
+  max-width: 295px;
+  margin: 35px 0 35px;
+  text-align: center;
+  background-position: center;
+}
+
+.dice-btn {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  padding: 35px;
+  transform: translate(0, -50%);
+  border-radius: 50%;
+  background: url('assets/icon-dice.svg') var(--neon-green) no-repeat;
+  background-position: center center;
+  transition: .4s ease-in-out;
+}
+
+.dice-btn:hover {
+  box-shadow: 0 0 25px var(--neon-green);
+}
+
+@media only screen and (min-width:600px)  {
+  .container {
+    width: 600px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .divider {
+    background: url('assets/pattern-divider-desktop.svg');
+    height: 16px;
+    width: 100%;
+    max-width: 444px;
   }
 }
